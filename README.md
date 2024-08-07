@@ -1,29 +1,37 @@
-# vue-task-tracker
+# Task Tracker
 
-This template should help get you started developing with Vue 3 in Vite.
+Task Tracker is a modern web application designed to help you keep track of your tasks efficiently. This project features a sleek user interface, CRUD functionality for managing tasks, and input validation for a smooth user experience. The application is built using Vue.js, Tailwind CSS, and JSON Server.
 
-## Recommended IDE Setup
+## Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- **Modern UI:** Redesigned with a clean and contemporary look using Tailwind CSS.
+- **CRUD Functionality:** Create, read, update, and delete tasks seamlessly.
+- **Input Validation:** Real-time input validation with user-friendly error messages.
+- **Routing:** Smooth navigation between different pages using Vue Router.
 
-## Customize configuration
+## Table of Contents
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- [Installation](#installation)
+- [Usage](#usage)
+- [Components](#components)
+- [Development](#development)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Project Setup
+## Installation
 
-```sh
-npm install
-```
+To get started with Task Tracker, follow these steps:
 
-### Compile and Hot-Reload for Development
+1. **Clone the repository:**
+   ```bash
+   [https://github.com/lahiruanushka/vue-task-tracker.git]
+   cd task-tracker
+Install dependencies:
 
-```sh
-npm run dev
-```
+2. npm install
 
-### Compile and Minify for Production
+Start the JSON Server:
 
-```sh
-npm run build
-```
+npm run json-server
+Run the application:
+npm run serve

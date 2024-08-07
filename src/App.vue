@@ -1,7 +1,10 @@
 <template>
   <div class="container mx-auto p-6 bg-gray-100 rounded-lg shadow-lg">
-    <Header title="Task Tracker" />
-    <Tasks :tasks="tasks" @delete-task="deleteTask" />
+    <Header title="Task Tracker" @open-modal="openModal" />
+    <Modal :isOpen="isModalOpen" @close="closeModal">
+      <AddTask />
+    </Modal>
+    <Tasks :tasks="tasks" @delete-task="deleteTask" @toggle-reminder="toggleReminder" />
   </div>
 </template>
 
@@ -9,10 +12,28 @@
 import { ref } from 'vue';
 import Header from './components/Header.vue';
 import Tasks from './components/Tasks.vue';
+import AddTask from './components/AddTask.vue';
+import Modal from './components/Modal.vue';
+
+const isModalOpen = ref(false);
+
+const openModal = () => {
+  isModalOpen.value = true;
+};
+
+const closeModal = () => {
+  isModalOpen.value = false;
+};
 
 const deleteTask = (id) => {
-  console.log(id);
+  if(confirm('Are you sure you want to delete this task?')) {
+    tasks.value = tasks.value.filter((task) => task.id !== id);
+  }
 };
+
+const toggleReminder = (id) => {
+  tasks.value = tasks.value.map((task) => task.id === id ? {...task, reminder: !task.reminder} : task)
+}
 
 const tasks = ref([
   {

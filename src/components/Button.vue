@@ -1,6 +1,6 @@
 <template>
     <button
-      :class="['px-4 py-2 rounded text-white font-bold shadow-md transition-transform transition-colors duration-300', buttonClasses]"
+      :class="['bg-teal-600 text-white px-5 py-2 rounded-full shadow-md hover:bg-teal-700 transition-colors', buttonClasses]"
       :style="{ backgroundColor: color }"
       @mouseover="hover = true"
       @mouseleave="hover = false"
@@ -9,6 +9,7 @@
     >
       {{ text }}
     </button>
+
   </template>
   
   <script setup>
